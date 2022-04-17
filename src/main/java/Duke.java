@@ -13,8 +13,15 @@ public class Duke {
             return;
         }
 
-        // echo command
-        System.out.println(userInput + "\n");
+        if (userInput.equals(Commands.LIST)) {
+            // process list command
+            Utility.printToConsoleEnumerated(tasks);
+        } else {
+            // echo command
+            tasks.add(userInput);
+            System.out.println("added: " + userInput + "\n");
+        }
+
         processNextCommandFromUser();
     }
 
